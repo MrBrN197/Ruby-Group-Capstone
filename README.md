@@ -2,58 +2,60 @@
 
 # Project Name
 
-> One paragraph statement about the project.
+> On this capstone we'll create a console app that will help the user keep records of different types of things: books, music albums, and games. Data will be stored in JSON files, and we're also going to create a sql database schema
 
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
+<To do: add screenshot of project>
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
+- PostgreSQL
 
 ## Live Demo
 
 [Live Demo Link](https://livedemo.com)
+<To do: add live demo link>
 
 
-## Getting Started
+## Getting Started Ruby 
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+**The project comes with Rubocop a Ruby Linter**
 
+- **To get a local copy of the repository please run the following commands on your terminal:**
+- **$ git clone https://github.com/...**
+- **$ cd to/cloned/path**
+- **$ git checkout branch_name**
+- **$ run `bundle install`**
+- **$ run `ruby main.rb`**
+- **$ For tests run `rspec spec`**
 
-To get a local copy up and running follow these simple example steps.
+## Getting Started PostgreSQL
 
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
+- **Create a database, you can follow the [getting started](https://www.postgresql.org/docs/current/tutorial-start.html) section on the PSQL website**
+- **Access your created database**
+- **Run \i  path/schema.sql to create the tables**
+- **Note: Be careful if you're copying the path from windows explorer as the path will be written as "drive:\path\to\folder\file_name.sql" and you'll likely get a "permission denied" error, use slashes instead of backslashes for the file address as in "\i drive:/path/to/folder/file_name.sql"**
 
 
 ## Authors
 
-👤 **Author1**
+👤 **Leonardo Paz**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Github: [Leonardo Paz](https://github.com/leolpaz)
+- Twitter: [Leonardo Paz](https://twitter.com/leonardolpaz95)
+- Linkedin: [Leonardo Paz](https://www.linkedin.com/in/leonardolpaz/)
 
-👤 **Author2**
+👤 **Brian Orora**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@MrBrN197](https://github.com/MrBrN197)
+- Twitter: [@MrBrN197](https://twitter.com/MrBrN197)
+- LinkedIn: [Orora Brian](https://www.linkedin.com/in/orora-brian/)
+
+👤 **Busiwa24**
+
+- GitHub: (https://github.com/Busiwa24) 
+- Twitter: (https://twitter.com/busiwaliuma) 
+- LinkedIn: (https://www.linkedin.com/in/busiwa-liuma-)
 
 ## 🤝 Contributing
 
@@ -64,12 +66,6 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
