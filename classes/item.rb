@@ -22,7 +22,4 @@ class Item
       year = Time.new.year
       year - @publish_date[:year] > 10
     end
-  end
-
-
-  
+  end 
