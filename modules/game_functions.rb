@@ -38,4 +38,20 @@ module GameFunctions
     Dir.mkdir('json') unless Dir.exist?('json')
     File.write('json/games_list.json', JSON.generate(data))
   end
+
+  def load_games
+    filename = 'json/games_list.json'
+    return [] unless File.exist?(filename)
+
+    raw_game_list = File.read(filename)
+    raw_game_list = JSON.parse(raw_game_list)
+    puts raw_game_list[0]['publish_date']
+
+    raw_game_list.map do |game|
+      puts 'publish_date:', game['publish_date']
+      puts 'last_played_date:', game['last_played_date']
+      puts 'is_multiplayer:', game['multiplayer']
+      Game.new(game['publish_date'], game['multiplayer'], game['last_played_date'])
+    end
+  end
 end
