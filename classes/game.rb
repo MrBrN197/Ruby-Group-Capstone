@@ -8,7 +8,7 @@ class Game < Item
   end
 
   def can_be_archived?
-    duration = Time.now.year - last_played_date.year
+    duration = Time.now.year - @last_played_date.year
     super && duration > 2
   end
 
