@@ -1,5 +1,3 @@
-require 'math'
-
 class Author
   attr_reader :first_name, :last_name
   attr_accessor :items
