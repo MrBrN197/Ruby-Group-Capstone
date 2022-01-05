@@ -26,3 +26,18 @@ CREATE TABLE books(
   FOREIGN KEY(label_id) REFERENCES labels(id),
   PRIMARY KEY(author_id)
 )
+
+CREATE TABLE games(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  multiplayer BOOLEAN,
+  last_played_date DATE,
+  published_date DATE,
+  archived BOOLEAN,
+  genre_id INT,
+  author_id INT,
+  label_id  INT,
+  FOREIGN KEY(genre_id) REFERENCES genres(id),
+  FOREIGN KEY(author_id) REFERENCES authors(id),
+  FOREIGN KEY(label_id) REFERENCES labels(id),
+  PRIMARY KEY(id)
+)
