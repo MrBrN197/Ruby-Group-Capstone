@@ -21,7 +21,7 @@ module GameFunctions
   end
 
   def create_game
-    publish_date = ask_publish_date
+    publish_date = ask_publish_date.to_i
     is_multiplayer = ask_text('Multiplayer (Y/n)').downcase
     last_played_date = ask_last_played_date
     Game.new(publish_date, is_multiplayer, last_played_date)
@@ -29,6 +29,13 @@ module GameFunctions
 
   def add_game
     game = create_game
-    @games << game
+    @games_list << game
+  end
+
+  # TODO: refactor to different module
+  def save_games
+    data = @games_list.map { |game| JSON.generate(game) }
+    Dir.mkdir('json') unless Dir.exist?('json')
+    File.write('json/games_list.json', JSON.generate(data))
   end
 end
