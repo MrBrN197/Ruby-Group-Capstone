@@ -60,7 +60,7 @@ module BookFunctions
   end
 
   def save_books
-    book_list = @book_list.each_with_index.map do |book, _index|
+    book_list = @book_list.map do |book|
       { 'publisher' => book.publisher, 'cover_state' => book.cover_state, 'publish_date' => book.publish_date }
     end
     File.write('book_list.json', JSON.generate(book_list))
