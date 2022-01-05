@@ -5,6 +5,13 @@ CREATE TABLE labels(
   PRIMARY KEY(id)
 )
 
+CREATE TABLE authors(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  first_name CHAR(50),
+  last_name CHAR(50),
+  PRIMARY KEY(id)
+)
+
 CREATE TABLE books(
   id INT GENERATED ALWAYS AS IDENTITY,
   publisher CHAR(50),
