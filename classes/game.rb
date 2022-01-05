@@ -16,4 +16,8 @@ class Game < Item
     data = { last_played_date: @last_played_date.year, multiplayer: @multiplayer, publish_date: @publish_date.year }
     json.generate(data)
   end
+
+  def to_s
+    "last_played: #{@last_played_date.year} publish_date: #{@publish_date.year} Multiplayer: #{@multiplayer}"
+  end
 end
