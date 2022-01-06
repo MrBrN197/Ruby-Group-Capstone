@@ -28,7 +28,7 @@ module GameFunctions
   end
 
   def create_game
-    publish_date = ask_publish_date.to_i
+    publish_date = ask_year('Publish Date').to_i
     is_multiplayer = ask_text('Multiplayer (Y/n)').downcase == 'y'
     last_played_date = ask_year('Last Played Date').to_i
     Game.new(publish_date, is_multiplayer, last_played_date)

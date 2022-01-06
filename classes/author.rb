@@ -5,8 +5,8 @@ class Author
   def initialize(first_name, last_name)
     @id = rand(1..100_000)
     @items = []
-    @first_name = first_name
-    @last_name = last_name
+    @first_name = first_name.strip
+    @last_name = last_name.strip
   end
 
   def add_item(item)
