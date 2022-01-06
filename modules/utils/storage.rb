@@ -2,9 +2,9 @@ require 'json'
 
 module JSONStorage
   def self.load(name)
-    return nil unless Dir.exists?('json')
-
     path = "./json/#{name}.json"
+    return nil unless File.exist?(path)
+
     JSON.parse(File.read(path))
   end
 
