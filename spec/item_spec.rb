@@ -3,7 +3,6 @@ require_relative '../classes/genre'
 require_relative '../classes/label'
 require_relative '../classes/author'
 
-
 describe Item do
   context 'Tests for the item class' do
     item = Item.new(2020)
