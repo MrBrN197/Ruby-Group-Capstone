@@ -27,20 +27,10 @@ module GameFunctions
     puts ''
   end
 
-  # TODO: should refactor to ask date
-  def ask_last_played_date
-    last_played_date = '0'
-    until !(last_played_date =~ /\d{4,4}/).nil? && last_played_date.to_i.between?(1, 2022)
-      print 'Insert last_played_date[year, 4 digits]:'
-      last_played_date = gets.chomp
-    end
-    last_played_date
-  end
-
   def create_game
     publish_date = ask_publish_date.to_i
     is_multiplayer = ask_text('Multiplayer (Y/n)').downcase == 'y'
-    last_played_date = ask_last_played_date.to_i
+    last_played_date = ask_year('Last Played Date').to_i
     Game.new(publish_date, is_multiplayer, last_played_date)
   end
 
