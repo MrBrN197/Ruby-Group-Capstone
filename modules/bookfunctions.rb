@@ -1,5 +1,6 @@
 require_relative '../classes/book'
 require_relative './utils/input'
+require_relative './utils/storage'
 require 'json'
 
 module BookFunctions
@@ -47,14 +48,13 @@ module BookFunctions
     book_list = @book_list.map do |book|
       { 'publisher' => book.publisher, 'cover_state' => book.cover_state, 'publish_date' => book.publish_date }
     end
-    File.write('book_list.json', JSON.generate(book_list))
+    JSONStorage.save('book_list', book_list)
   end
 
   def load_books
-    return [] unless File.exist?('book_list.json')
+    raw_book_list = JSONStorage.load('book_list')
+    return [] unless raw_book_list
 
-    raw_book_list = File.read('book_list.json')
-    raw_book_list = JSON.parse(raw_book_list)
     arr = []
     raw_book_list.each do |book|
       arr.push(Book.new(book['publisher'], book['cover_state'], book['publish_date'].to_i))
