@@ -1,6 +1,7 @@
 require_relative '../classes/game'
 require_relative './associations'
 require_relative './utils/input'
+require_relative './utils/storage'
 
 module GameFunctions
   include Associations
@@ -58,10 +59,9 @@ module GameFunctions
   end
 
   def load_games
-    filename = 'json/games_list.json'
-    return [] unless File.exist?(filename)
+    raw_games_list = JSONStorage.load('games_list')
+    return [] unless raw_games_list
 
-    raw_game_list = JSON.parse(File.read(filename))
-    raw_game_list.map { |game| Game.new(game['publish_date'], game['multiplayer'], game['last_played_date']) }
+    raw_games_list.map { |game| Game.new(game['publish_date'], game['multiplayer'], game['last_played_date']) }
   end
 end
