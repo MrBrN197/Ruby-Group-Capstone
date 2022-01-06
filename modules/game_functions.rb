@@ -1,13 +1,29 @@
-require_relative '../classes/author'
 require_relative '../classes/game'
+require_relative './associations'
+require_relative './utils/input'
 
 module GameFunctions
+  include Associations
+  include Input
+
   def list_all_games
-    @games_list.each { |game| puts game }
+    puts 'Games: '
+    puts '---------------------------'
+    if @games_list.empty?
+      puts 'No Games to List'
+    else
+      puts @games_list
+    end
+    puts '---------------------------'
+    puts ''
   end
 
   def list_all_authors
-    @authors_list.each { |author| puts author }
+    puts 'Authors: '
+    puts '---------------------------'
+    puts @authors_list
+    puts '---------------------------'
+    puts ''
   end
 
   # TODO: should refactor to ask date
@@ -29,7 +45,9 @@ module GameFunctions
 
   def add_game
     game = create_game
+    attach_info(game)
     @games_list << game
+    save_games
   end
 
   # TODO: refactor to different module
