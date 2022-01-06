@@ -51,11 +51,8 @@ module GameFunctions
     save_games
   end
 
-  # TODO: refactor to different module
   def save_games
-    data = @games_list.map { |game| game }
-    Dir.mkdir('json') unless Dir.exist?('json')
-    File.write('json/games_list.json', JSON.generate(data))
+    JSONStorage.save('games_list', @games_list)
   end
 
   def load_games
