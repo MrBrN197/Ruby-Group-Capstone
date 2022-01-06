@@ -1,7 +1,10 @@
 require_relative '../classes/book'
+require_relative './utils/input'
 require 'json'
 
 module BookFunctions
+  include Input
+
   def list_all_books
     @book_list.each_with_index do |book, i|
       puts "#{i + 1}) publisher: #{book.publisher}, cover state: #{book.cover_state},
@@ -13,16 +16,6 @@ module BookFunctions
     @label_list.each_with_index do |label, i|
       puts "#{i + 1}) title: #{label.title}, color: #{label.color}"
     end
-  end
-
-  def ask_text(text)
-    valid = false
-    until valid
-      print "Insert #{text}:"
-      input = gets.chomp
-      valid = true unless input == ''
-    end
-    input
   end
 
   def ask_cover_state
@@ -38,15 +31,6 @@ module BookFunctions
     cover_state
   end
 
-  def ask_publish_date
-    publish_date = '0'
-    until !(publish_date =~ /\d{4,4}/).nil? && publish_date.to_i.between?(1, 2022)
-      print 'Insert publish_date[year, 4 digits]:'
-      publish_date = gets.chomp
-    end
-    publish_date
-  end
-
   def create_book(publisher, cover_state, publish_date)
     book = Book.new(publisher, cover_state, publish_date)
     @book_list.push(book)
@@ -55,7 +39,7 @@ module BookFunctions
   def add_book
     publisher = ask_text('publisher')
     cover_state = ask_cover_state
-    publish_date = ask_publish_date.to_i
+    publish_date = ask_year('Publish Date').to_i
     create_book(publisher, cover_state, publish_date)
   end
 
