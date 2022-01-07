@@ -22,9 +22,13 @@ module BookFunctions
   end
 
   def list_all_labels
+    puts 'Books: '
+    puts '---------------------------'
     @label_list.each_with_index do |label, i|
       puts "#{i + 1}) title: #{label.title}, color: #{label.color}"
     end
+    puts '---------------------------'
+    puts ''
   end
 
   def ask_cover_state
