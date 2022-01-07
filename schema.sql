@@ -3,20 +3,20 @@ CREATE TABLE labels(
   title CHAR(50),
   color CHAR(50),
   PRIMARY KEY(id)
-)
+);
 
 CREATE TABLE authors(
   id INT GENERATED ALWAYS AS IDENTITY,
   first_name CHAR(50),
   last_name CHAR(50),
   PRIMARY KEY(id)
-)
+);
 
 CREATE TABLE genres(
   id INT GENERATED ALWAYS AS IDENTITY,
   name CHAR(50),
   PRIMARY KEY(id)
-)
+);
 
 CREATE TABLE music_albums(
   id INT GENERATED ALWAYS AS IDENTITY,
@@ -30,7 +30,7 @@ CREATE TABLE music_albums(
   FOREIGN KEY(author_id) REFERENCES authors(id),
   FOREIGN KEY(label_id) REFERENCES labels(id),
   PRIMARY KEY(id)
-)
+);
 
 CREATE TABLE books(
   id INT GENERATED ALWAYS AS IDENTITY,
@@ -45,7 +45,7 @@ CREATE TABLE books(
   FOREIGN KEY(author_id) REFERENCES authors(id),
   FOREIGN KEY(label_id) REFERENCES labels(id),
   PRIMARY KEY(id)
-)
+);
 
 CREATE TABLE games(
   id INT GENERATED ALWAYS AS IDENTITY,
@@ -60,4 +60,4 @@ CREATE TABLE games(
   FOREIGN KEY(author_id) REFERENCES authors(id),
   FOREIGN KEY(label_id) REFERENCES labels(id),
   PRIMARY KEY(id)
-)
+);
