@@ -39,6 +39,7 @@ class App
   private
 
   # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/MethodLength
   def handle_input
     n = Integer(gets.chomp)
     case n
@@ -69,6 +70,7 @@ class App
     end
   end
   # rubocop:enable Metrics/CyclomaticComplexity
+  # rubocop:enable Metrics/MethodLength
 
   def display_options
     puts '1  - List all books'
