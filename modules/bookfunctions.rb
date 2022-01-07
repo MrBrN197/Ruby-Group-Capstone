@@ -22,7 +22,7 @@ module BookFunctions
   end
 
   def list_all_labels
-    puts 'Books: '
+    puts 'Labels: '
     puts '---------------------------'
     @label_list.each_with_index do |label, i|
       puts "#{i + 1}) title: #{label.title}, color: #{label.color}"
