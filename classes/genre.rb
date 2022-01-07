@@ -11,4 +11,12 @@ class Genre
     @items.push(item)
     item.add_genre(self)
   end
+
+  def to_s
+    %(Name: "#{@name}")
+  end
+
+  def to_json(json)
+    json.generate({ name: @name })
+  end
 end
