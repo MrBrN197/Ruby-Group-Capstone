@@ -7,10 +7,18 @@ module BookFunctions
   include Input
 
   def list_all_books
-    @book_list.each_with_index do |book, i|
-      puts "#{i + 1}) publisher: #{book.publisher}, cover state: #{book.cover_state},
-      publish date: #{book.publish_date.year}"
+    puts 'Books: '
+    puts '---------------------------'
+    if @book_list.empty?
+      puts 'No Books to List'
+    else
+      @book_list.each_with_index do |book, i|
+        puts "#{i + 1}) publisher: #{book.publisher}, cover state: #{book.cover_state},
+        publish date: #{book.publish_date.year}"
+      end
     end
+    puts '---------------------------'
+    puts ''
   end
 
   def list_all_labels
