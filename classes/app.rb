@@ -28,8 +28,8 @@ class App
   end
 
   def start
-    puts 'Welcome'.light_blue
-    puts 'Please choose an option by entering a number:'.light_blue
+    puts '** WELCOME **'.light_blue
+    puts '> Please choose an option by entering a number:'.light_blue
 
     loop do
       display_options
@@ -64,10 +64,11 @@ class App
       add_game
     when 10
       save_data
+      puts 'Saving...'
       puts 'Goodbye'
       exit
     else
-      puts 'Please select a number between 1-13'
+      puts 'Please select a number between 1-10'
     end
   end
   # rubocop:enable Metrics/CyclomaticComplexity
