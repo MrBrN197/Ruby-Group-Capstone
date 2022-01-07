@@ -13,7 +13,7 @@ class App
     @music_albums_list = load_albums
     @label_list = [Label.new('gift', 'red'), Label.new('new', 'blue')]
     @authors_list = [Author.new('Suzanne', 'Collins'), Author.new('George', 'R.R Martin')]
-    @genres_list = [Genre.new('Action')]
+    @genres_list = [Genre.new('Action'), Genre.new('Fantasy')]
   end
 
   include BookFunctions
@@ -38,6 +38,7 @@ class App
 
   private
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def handle_input
     n = Integer(gets.chomp)
     case n
@@ -67,6 +68,7 @@ class App
       puts 'Please select a number between 1-13'
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 
   def display_options
     puts '1  - List all books'
