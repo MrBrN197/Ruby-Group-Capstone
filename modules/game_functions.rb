@@ -36,7 +36,7 @@ module GameFunctions
 
   def add_game
     game = create_game
-    # attach_info(game)
+    attach_info(game)
     @games_list << game
     save_games
   end

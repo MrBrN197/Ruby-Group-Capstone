@@ -1,10 +1,12 @@
 require_relative '../classes/book'
 require_relative './utils/input'
 require_relative './utils/storage'
+require_relative './associations'
 require 'json'
 
 module BookFunctions
   include Input
+  include Associations
 
   def list_all_books
     puts 'Books: '
@@ -46,6 +48,7 @@ module BookFunctions
 
   def create_book(publisher, cover_state, publish_date)
     book = Book.new(publisher, cover_state, publish_date)
+    attach_info(book)
     @book_list.push(book)
   end
 

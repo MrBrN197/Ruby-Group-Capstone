@@ -35,7 +35,7 @@ module MusicAlbumsFunctions
 
   def add_music_album
     album = create_album
-    # attach_info(album)
+    attach_info(album)
     @music_albums_list << album
     save_albums
   end
