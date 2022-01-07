@@ -5,6 +5,7 @@ require_relative '../classes/label'
 require_relative '../classes/author'
 require_relative '../classes/game'
 require_relative '../classes/genre'
+require_relative '../classes/color'
 
 class App
   def initialize
@@ -27,8 +28,8 @@ class App
   end
 
   def start
-    puts 'Welcome'
-    puts 'Please choose an option by entering a number:'
+    puts 'Welcome'.light_blue
+    puts 'Please choose an option by entering a number:'.light_blue
 
     loop do
       display_options
@@ -73,15 +74,15 @@ class App
   # rubocop:enable Metrics/MethodLength
 
   def display_options
-    puts '1  - List all books'
-    puts '2  - List all music albums'
-    puts '3  - List of games'
-    puts '4  - List all genres'
-    puts '5  - List all labels'
-    puts '6  - List all authors'
-    puts '7  - Add a book'
-    puts '8  - Add a music album'
-    puts '9  - Add a game'
-    puts '10 - Exit'
+    puts "#{'1'.green} - List all books"
+    puts "#{'2'.green} - List all music albums"
+    puts "#{'3'.green} - List of games"
+    puts "#{'4'.green} - List all genres"
+    puts "#{'5'.green} - List all labels"
+    puts "#{'6'.green} - List all authors"
+    puts "#{'7'.green} - Add a book"
+    puts "#{'8'.green} - Add a music album"
+    puts "#{'9'.green} - Add a game"
+    puts "#{'10'.red} - Exit"
   end
 end
